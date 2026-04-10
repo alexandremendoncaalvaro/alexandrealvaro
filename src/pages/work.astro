@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import WorkItem from "../components/WorkItem.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
-import { experience, work } from "../data/site";
+import { experience, industrialSection, industrialWork, work } from "../data/site";
 
 const featured = work.filter((w) => w.featured);
 const rest = work.filter((w) => !w.featured);
@@ -44,6 +44,49 @@ const rest = work.filter((w) => !w.featured);
     <SectionHeading eyebrow="Experience" title="Roles" />
     <div class="mt-12">
       {experience.map((item) => <ExperienceItem item={item} />)}
+    </div>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="reveal container-page py-20 sm:py-24">
+    <SectionHeading
+      eyebrow={industrialSection.eyebrow}
+      title={industrialSection.title}
+      description={industrialSection.intro}
+    />
+    <div class="mt-14 space-y-0">
+      {industrialWork.map((item) => (
+        <article class="py-9 border-t border-paper-line/70 dark:border-white/10">
+          <div class="grid gap-5 md:grid-cols-[10rem_1fr]">
+            <p class="text-xs uppercase tracking-[0.18em] opacity-50 md:pt-1">
+              {item.context}
+            </p>
+            <div class="max-w-prose">
+              <h3 class="text-lg font-serif font-normal tracking-tightish">
+                {item.title}
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed opacity-80">
+                {item.summary}
+              </p>
+              <dl class="mt-4 space-y-1.5 text-sm">
+                <div class="flex gap-3">
+                  <dt class="shrink-0 w-14 uppercase tracking-[0.14em] text-[11px] opacity-45 pt-0.5">
+                    Role
+                  </dt>
+                  <dd class="opacity-75">{item.role}</dd>
+                </div>
+                <div class="flex gap-3">
+                  <dt class="shrink-0 w-14 uppercase tracking-[0.14em] text-[11px] opacity-45 pt-0.5">
+                    Impact
+                  </dt>
+                  <dd class="opacity-75">{item.impact}</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

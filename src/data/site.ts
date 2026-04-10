@@ -64,6 +64,8 @@ export const credibility = {
     "Delivers applied AI and computer vision systems for global clients through Baunilha Systems.",
     "Built CorridorKey-Runtime in collaboration with Corridor Digital — a native AI keying runtime with an OFX plugin for DaVinci Resolve.",
   ],
+  foundation:
+    "Built on a foundation of industrial software, automation, and mission-critical systems — spanning airport infrastructure, offshore operations, and public utilities.",
 } as const;
 
 export type WorkItem = {
@@ -224,6 +226,7 @@ export const about = {
   paragraphs: [
     "Building software since 2007 — AI systems, computer vision, software architecture, and production environments where reliability and practical deployment matter.",
     "My work spans computer vision, production ML, software architecture, and performance-critical systems where reliability, operational constraints, and practical deployment matter.",
+    "My engineering foundation was built in industrial software, embedded systems, and control software for mission-critical environments — including airport infrastructure, offshore oil systems, and public utilities. Experience in environments where reliability constraints are non-negotiable shapes how I approach AI and software systems today.",
     "At AB InBev, I led architecture for SODA Vision, the company's proprietary end-to-end computer vision platform. Through Baunilha Systems, I deliver applied AI solutions for global clients — including vision systems, offline-first inference pipelines, and software that bridges cloud workflows with deterministic execution in constrained environments.",
     "I'm especially interested in computer vision, AI runtimes, developer tools, and software systems that need to be both technically strong and practical to operate.",
   ],
@@ -248,6 +251,69 @@ export const about = {
     ],
   },
 } as const;
+
+// ─── Industrial systems foundation ──────────────────────────────────────────
+
+export type IndustrialCase = {
+  slug: string;
+  title: string;
+  context: string; // e.g. "Airport infrastructure · Critical systems"
+  summary: string;
+  role: string;
+  impact: string;
+};
+
+export const industrialSection = {
+  eyebrow: "Foundation",
+  title: "Industrial systems foundation",
+  intro:
+    "Before focusing more heavily on AI systems and computer vision, a substantial part of my early engineering work was in industrial software and mission-critical environments. These projects formed the systems thinking that runs through everything I build today.",
+} as const;
+
+export const industrialWork: IndustrialCase[] = [
+  {
+    slug: "infraero",
+    title: "Emergency systems software — Infraero",
+    context: "Airport infrastructure · Safety-critical systems",
+    summary:
+      "Embedded and control software for airport fire trucks deployed across Brazilian airports. Built for operational reliability in safety-critical, time-sensitive environments where system failure has direct consequences.",
+    role: "Software development — embedded control systems, operational interfaces, field deployment.",
+    impact:
+      "Deployed across multiple Brazilian airports in a high-consequence operational context.",
+  },
+  {
+    slug: "petrobras",
+    title: "Control systems software — Petrobras",
+    context: "Offshore infrastructure · Mission-critical systems",
+    summary:
+      "Software for control and monitoring systems in offshore oil infrastructure. Designed around high-consequence constraints where reliability, fault tolerance, and deterministic behavior are non-negotiable.",
+    role: "Software development — control systems, monitoring, industrial protocols.",
+    impact:
+      "Deployed in offshore environments where system availability is directly tied to operational and safety continuity.",
+  },
+  {
+    slug: "aysa",
+    title: "Infrastructure control systems — AySA",
+    context: "Public utility · Industrial control",
+    summary:
+      "Control software for sluice gate and sanitation infrastructure in Buenos Aires' water and wastewater network. Public utility-scale systems with continuous operational requirements and no tolerance for downtime.",
+    role: "Software development — control systems, infrastructure software, PLC integration.",
+    impact:
+      "Contributed to the reliable operation of public sanitation infrastructure serving the Buenos Aires metropolitan area.",
+  },
+  {
+    slug: "tmg",
+    title: "Automation and systems software — TMG",
+    context: "Agricultural genetics · Technical automation",
+    summary:
+      "Software systems for an agricultural genetics and crop improvement operation. Spanned automation, data management, and domain-specific tooling for precision agricultural workflows.",
+    role: "Software development — automation systems, operational tooling, process integration.",
+    impact:
+      "Brought engineering discipline to domain-specific operational workflows, reducing manual overhead in specialized genetics processes.",
+  },
+];
+
+// ─── Secondary products ──────────────────────────────────────────────────────
 
 export type SecondaryItem = {
   name: string;
