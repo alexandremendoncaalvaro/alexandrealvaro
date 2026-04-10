@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import WorkItem from "../components/WorkItem.astro";
+import {
+  credibility,
+  focus,
+  links,
+  secondary,
+  site,
+  work,
+} from "../data/site";
+
+const featured = work.filter((w) => w.featured);
+const others = work.filter((w) => !w.featured).slice(0, 3);
+const selected = [...featured, ...others];
+---
+
+<BaseLayout title={undefined} description={site.description}>
+  <Hero />
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-20 sm:py-24">
+    <SectionHeading
+      eyebrow="Selected work"
+      title="A few projects that show the range."
+      description="Open source, applied AI, and enterprise systems. Chosen for signal, not volume."
+    />
+    <div class="mt-12">
+      {selected.map((item) => <WorkItem item={item} />)}
+    </div>
+    <div class="mt-10 text-sm">
+      <a
+        href="/work"
+        class="no-underline inline-flex items-center gap-2 border-b border-ink pb-1 dark:border-paper"
+      >
+        See full work
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-20 sm:py-24">
+    <div class="grid gap-12 md:grid-cols-2">
+      <div>
+        <SectionHeading eyebrow="Credibility" title={credibility.title} />
+        <ul class="mt-8 space-y-6 max-w-prose text-[15px] leading-relaxed opacity-85">
+          {
+            credibility.items.map((item) => (
+              <li class="pl-5 relative before:content-['—'] before:absolute before:left-0 before:opacity-50">
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <SectionHeading eyebrow="Focus" title={focus.title} />
+        <ul class="mt-8 space-y-3 max-w-prose text-[15px] opacity-85">
+          {
+            focus.items.map((item) => (
+              <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:opacity-50">
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-20 sm:py-24">
+    <SectionHeading
+      eyebrow="Also"
+      title={secondary.title}
+      description={secondary.intro}
+    />
+    <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        secondary.items.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="no-underline block border-t border-paper-line/70 dark:border-white/10 pt-5 pr-4 opacity-85 hover:opacity-100"
+              rel="noopener"
+            >
+              <p class="text-base font-serif">{item.name}</p>
+              <p class="mt-2 text-sm opacity-70">{item.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-20 sm:py-24">
+    <SectionHeading
+      eyebrow="Contact"
+      title="Open to serious collaborations, technical leadership, and applied AI engagements."
+    />
+    <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+      <a
+        href={`mailto:${links.email}`}
+        class="no-underline inline-flex items-center gap-2 border-b border-ink pb-1 dark:border-paper"
+      >
+        {links.email}
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href={links.linkedin} class="no-underline opacity-70 hover:opacity-100" rel="me noopener">
+        LinkedIn
+      </a>
+      <a href={links.github} class="no-underline opacity-70 hover:opacity-100" rel="me noopener">
+        GitHub
+      </a>
+    </div>
+  </section>
+</BaseLayout>

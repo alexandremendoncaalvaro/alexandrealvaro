@@ -1,0 +1,33 @@
+---
+import type { Experience } from "../data/site";
+
+export interface Props {
+  item: Experience;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="py-10 first:pt-0 border-t border-paper-line/70 first:border-0 dark:border-white/10">
+  <div class="grid gap-6 md:grid-cols-[10rem_1fr]">
+    <p class="text-xs uppercase tracking-[0.18em] opacity-60 md:pt-2">
+      {item.period}
+    </p>
+    <div class="max-w-prose">
+      <h3 class="text-xl sm:text-2xl font-serif font-normal tracking-tightish">
+        {item.company}
+      </h3>
+      <p class="mt-1 text-sm opacity-70">{item.title}</p>
+      <p class="mt-4 leading-relaxed opacity-85">{item.description}</p>
+      {item.highlights && item.highlights.length > 0 && (
+        <ul class="mt-5 space-y-3 text-[15px] leading-relaxed opacity-85 list-none">
+          {item.highlights.map((h) => (
+            <li class="pl-5 relative before:content-['—'] before:absolute before:left-0 before:opacity-50">
+              {h}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</article>

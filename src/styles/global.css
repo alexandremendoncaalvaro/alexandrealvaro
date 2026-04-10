@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-ink text-paper;
+    }
+  }
+
+  ::selection {
+    background: #1c1917;
+    color: #fafaf9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background: #fafaf9;
+      color: #1c1917;
+    }
+  }
+
+  a {
+    @apply underline-offset-4 decoration-ink/30 hover:decoration-ink transition-colors;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    a {
+      @apply decoration-paper/30 hover:decoration-paper;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tightish text-balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .rule {
+    @apply border-0 border-t border-paper-line;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .rule {
+      border-color: rgba(250, 250, 249, 0.12);
+    }
+  }
+}

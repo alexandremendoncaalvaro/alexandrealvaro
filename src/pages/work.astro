@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import WorkItem from "../components/WorkItem.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import { experience, work } from "../data/site";
+
+const featured = work.filter((w) => w.featured);
+const rest = work.filter((w) => !w.featured);
+---
+
+<BaseLayout
+  title="Work"
+  description="Selected public and enterprise work across AI systems, computer vision, and software architecture."
+>
+  <section class="container-page pt-20 sm:pt-24 pb-10">
+    <SectionHeading
+      eyebrow="Work"
+      title="Selected public and enterprise work."
+      description="A curated list — not exhaustive. Enterprise items are presented without confidential details, focused on architecture, constraints, and impact."
+      as="h1"
+    />
+  </section>
+
+  <section class="container-page py-12">
+    <p class="text-xs uppercase tracking-[0.18em] opacity-60 mb-6">Featured</p>
+    <div>
+      {featured.map((item) => <WorkItem item={item} />)}
+    </div>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-16">
+    <p class="text-xs uppercase tracking-[0.18em] opacity-60 mb-6">Other selected work</p>
+    <div>
+      {rest.map((item) => <WorkItem item={item} />)}
+    </div>
+  </section>
+
+  <hr class="rule container-page" />
+
+  <section class="container-page py-20 sm:py-24">
+    <SectionHeading eyebrow="Experience" title="Roles" />
+    <div class="mt-12">
+      {experience.map((item) => <ExperienceItem item={item} />)}
+    </div>
+  </section>
+</BaseLayout>

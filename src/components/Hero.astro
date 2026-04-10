@@ -1,0 +1,34 @@
+---
+import { hero, site } from "../data/site";
+---
+
+<section class="container-page pt-20 sm:pt-28 lg:pt-32 pb-20 sm:pb-24">
+  <p class="text-xs sm:text-sm uppercase tracking-[0.2em] opacity-60 font-sans">
+    {hero.eyebrow}
+  </p>
+  <h1 class="mt-6 max-w-prose text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-serif font-normal">
+    {hero.title}
+  </h1>
+  <p class="mt-8 max-w-prose text-lg sm:text-xl leading-relaxed opacity-80 font-sans">
+    {hero.supporting}
+  </p>
+  <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+    <a
+      href={hero.primaryCta.href}
+      class="no-underline inline-flex items-center gap-2 border-b border-ink pb-1 dark:border-paper"
+    >
+      {hero.primaryCta.label}
+      <span aria-hidden="true">→</span>
+    </a>
+    <a
+      href={hero.secondaryCta.href}
+      class="no-underline opacity-70 hover:opacity-100"
+      rel="me noopener"
+    >
+      {hero.secondaryCta.label}
+    </a>
+  </div>
+  <p class="mt-16 text-xs uppercase tracking-[0.18em] opacity-50">
+    {site.location}
+  </p>
+</section>
