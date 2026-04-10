@@ -13,7 +13,7 @@ const rest = work.filter((w) => !w.featured);
   title="Work"
   description="Selected public and enterprise work across AI systems, computer vision, and software architecture."
 >
-  <section class="container-page pt-20 sm:pt-24 pb-10">
+  <section class="enter container-page pt-20 sm:pt-24 pb-10">
     <SectionHeading
       eyebrow="Work"
       title="Selected public and enterprise work."
@@ -22,7 +22,7 @@ const rest = work.filter((w) => !w.featured);
     />
   </section>
 
-  <section class="container-page py-12">
+  <section class="reveal container-page py-12">
     <p class="text-xs uppercase tracking-[0.18em] opacity-60 mb-6">Featured</p>
     <div>
       {featured.map((item) => <WorkItem item={item} />)}
@@ -31,7 +31,7 @@ const rest = work.filter((w) => !w.featured);
 
   <hr class="rule container-page" />
 
-  <section class="container-page py-16">
+  <section class="reveal container-page py-16">
     <p class="text-xs uppercase tracking-[0.18em] opacity-60 mb-6">Other selected work</p>
     <div>
       {rest.map((item) => <WorkItem item={item} />)}
@@ -40,7 +40,7 @@ const rest = work.filter((w) => !w.featured);
 
   <hr class="rule container-page" />
 
-  <section class="container-page py-20 sm:py-24">
+  <section class="reveal container-page py-20 sm:py-24">
     <SectionHeading eyebrow="Experience" title="Roles" />
     <div class="mt-12">
       {experience.map((item) => <ExperienceItem item={item} />)}

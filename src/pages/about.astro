@@ -6,13 +6,13 @@ import { about, links } from "../data/site";
 
 <BaseLayout
   title="About"
-  description="Senior Software Engineer with 15+ years of experience building AI and software systems for real-world environments."
+  description="Building software since 2007 — AI systems, computer vision, software architecture, and production environments where reliability matters."
 >
-  <section class="container-page pt-20 sm:pt-24 pb-10">
+  <section class="enter container-page pt-20 sm:pt-24 pb-10">
     <SectionHeading eyebrow="About" title={about.title} as="h1" />
   </section>
 
-  <section class="container-page pb-16">
+  <section class="reveal container-page pb-16">
     <div class="max-w-prose space-y-6 text-[17px] leading-relaxed opacity-90">
       {about.paragraphs.map((p) => <p>{p}</p>)}
     </div>
@@ -20,7 +20,7 @@ import { about, links } from "../data/site";
 
   <hr class="rule container-page" />
 
-  <section class="container-page py-16">
+  <section class="reveal container-page py-16">
     <div class="grid gap-12 md:grid-cols-2">
       <div>
         <p class="text-xs uppercase tracking-[0.18em] opacity-60">

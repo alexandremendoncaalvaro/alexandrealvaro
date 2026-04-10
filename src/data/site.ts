@@ -14,7 +14,7 @@ export const site = {
   tagline:
     "I build AI and software systems for real-world, performance-critical environments.",
   description:
-    "Senior Software Engineer with 15+ years of experience building AI and software systems for real-world environments. Computer vision, production ML, software architecture, and performance-critical systems.",
+    "Senior Software Engineer building AI and software systems since 2007. Computer vision, production ML, software architecture, and performance-critical systems.",
   location: "Based in Brazil · Working worldwide",
 } as const;
 
@@ -42,7 +42,7 @@ export const hero = {
   title:
     "AI systems, computer vision, and software architecture for real-world environments.",
   supporting:
-    "15+ years building software across computer vision, production ML, and constrained environments where reliability and practical deployment matter.",
+    "Nearly 20 years building software across computer vision, production ML, and constrained environments where reliability and practical deployment matter.",
   primaryCta: { label: "View work", href: "/work" },
   secondaryCta: { label: "GitHub", href: links.github },
 } as const;
@@ -222,7 +222,7 @@ export const experience: Experience[] = [
 export const about = {
   title: "About",
   paragraphs: [
-    "Senior Software Engineer with 15+ years of experience building AI and software systems for real-world environments.",
+    "Building software since 2007 — AI systems, computer vision, software architecture, and production environments where reliability and practical deployment matter.",
     "My work spans computer vision, production ML, software architecture, and performance-critical systems where reliability, operational constraints, and practical deployment matter.",
     "At AB InBev, I led architecture for SODA Vision, the company's proprietary end-to-end computer vision platform. Through Baunilha Systems, I deliver applied AI solutions for global clients — including vision systems, offline-first inference pipelines, and software that bridges cloud workflows with deterministic execution in constrained environments.",
     "I'm especially interested in computer vision, AI runtimes, developer tools, and software systems that need to be both technically strong and practical to operate.",
