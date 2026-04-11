@@ -27,7 +27,7 @@ export const nav: NavLink[] = [
 ];
 
 export const links = {
-  email: "alexandre.alvaro@hotmail.com",
+  email: "alexandre@baunilha.dev",
   github: "https://github.com/alexandremendoncaalvaro",
   linkedin: "https://www.linkedin.com/in/alexandrealvaro",
   website: "https://alexandrealvaro.com.br/",
